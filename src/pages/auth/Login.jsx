@@ -2,7 +2,7 @@ import { FaGoogle , FaFacebookF } from "react-icons/fa";
 import { useState } from "react";
 import '../../assets/css/login.css'
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
-import {auth} from '../../firebase.js'
+// import {auth} from '../../firebase.js'
 import { useNavigate } from "react-router-dom";
 const provider = new GoogleAuthProvider();
 
