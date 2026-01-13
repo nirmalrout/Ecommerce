@@ -1,0 +1,77 @@
+.cart-page{
+    padding: 50px;
+}
+.cart-page h4{
+    font-size: 32px;
+}
+.cart-page .order-table{
+    display: flex;
+    flex-direction: column;
+}
+.cart-page .order-table .order{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #a0a0a033;
+}
+.cart-page .order-table .order .item-details{
+    display: flex;
+}
+.cart-page .order-table .order .item-details img{
+    width: 150px;
+}
+.cart-page .order-table .order .item-details .item-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+.cart-page .order-table .order .item-details .item-info .item-name{
+    font-size: 18px;
+    width: 350px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cart-page .order-table .order .item-details .item-info .item-price{
+    font-size: 16px;
+}
+.cart-page .order-table .order .quantity,
+.cart-page .order-table .order .item-total-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-page .order-table .order .item-total-price p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.cart-page .order-table .order .button-div{
+    display: flex;
+    gap: 10px;
+}
+.cart-page .order-table .order .button-div button{
+    background: transparent;
+    outline: none;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.cart-page .order-total{
+    display: flex;
+    justify-content: end;
+    padding: 30px 0;
+}
+.cart-page .order-total .inner-div{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    font-size: 22px;
+}
