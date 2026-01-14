@@ -1,8 +1,31 @@
-import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, removeFromCart } from '../feature/cart/cartSlice.js'
 
-const ProductItem = () => {
+const ProductItem = ({item}) => {
+  const cartItem = useSelector(state => state.cart)
+  const dispatch = useDispatch()
   return (
-    <div>ProductItem</div>
+    <div className="card">
+      <img src={item.thumbnail} alt={item.title} loading='lazy' />
+      <div className='card-body'>
+        <p>{item.title}</p>
+        <p>{item.price}</p>
+
+        {!cartItem.some(c => c.id === item.id) ? (
+          <button className='add-btn' onClick={() => dispatch(addToCart(item))}>
+            Add to Cart
+          </button>
+        ) : (
+          <div className='button-div'>
+            <button onClick={() => dispatch(removeFromCart(item))}>-</button>
+            <span>
+              {cartItem.find(c => c.id === item.id)?.quantity || 0}
+            </span>
+            <button onClick={() => dispatch(addToCart(item))}>+</button>
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 
