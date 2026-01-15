@@ -8,7 +8,7 @@ const ProductItem = ({item}) => {
     <div className="card">
       <img src={item.thumbnail} alt={item.title} loading='lazy' />
       <div className='card-body'>
-        <p>{item.title}</p>
+        <p className='title'>{item.title}</p>
         <p>{item.price}</p>
 
         {!cartItem.some(c => c.id === item.id) ? (
