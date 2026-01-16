@@ -5,36 +5,38 @@ import { useEffect, useMemo, useState } from 'react'
 import {useQuery} from '@tanstack/react-query'
 import ProductItem from '../../components/ProductItem';
 import Pagination from '../../components/Pagination';
+import { useDispatch, useSelector } from 'react-redux';
+import { productFetch } from '../../feature/product/productSlice'
 
 
 const Home = () => {
   const [selectedCategories, setSelectedCategories] = useState([])
+  const dispatch = useDispatch();
+  const {items,error,status} = useSelector((state)=> state.product)
+
+  // const { data = [], isLoading, isError } = useQuery({
+  //   queryKey: ['products'],
+  //   queryFn: items,
+  //   staleTime: Infinity,
+  //   cacheTime: 1000 * 60 * 30,  
+  // })
+
   
-
-  const fetchProducts = async () => {
-    const res = await fetch('https://dummyjson.com/products')
-    const data = await res.json()
-    return data.products
-  }
-
-  const { data = [], isLoading, isError } = useQuery({
-    queryKey: ['products'],
-    queryFn: fetchProducts,
-    staleTime: Infinity,
-    cacheTime: 1000 * 60 * 30,  
-  })
-
  
 
   const filteredProducts = useMemo(() => {
-    if (selectedCategories.length === 0) return data
-    return data.filter(p =>
+    if (selectedCategories.length === 0) return items
+    return items.filter(p =>
       selectedCategories.includes(p.category)
     )
-  }, [data, selectedCategories])
+  }, [items, selectedCategories])
 
-  if (isLoading) return <p>Loading...</p>
-  if (isError) return <p>Error loading products</p>
+  useEffect(()=>{
+    dispatch(productFetch())
+  },[dispatch])
+
+  // if (isLoading) return <p>Loading...</p>
+  if (error) return <p>Error loading products</p>
 
   return (
     <div className="home-page">

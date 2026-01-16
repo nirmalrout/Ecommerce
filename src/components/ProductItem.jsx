@@ -1,11 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '../feature/cart/cartSlice.js'
+import { useNavigate } from 'react-router-dom';
 
 const ProductItem = ({item}) => {
   const cartItem = useSelector(state => state.cart)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const handleRedirect = () => {
+    navigate(`/product?id=${item.id}`)
+  }
   return (
-    <div className="card">
+    <div className="card" onClick={handleRedirect}>
       <img src={item.thumbnail} alt={item.title} loading='lazy' />
       <div className='card-body'>
         <p className='title'>{item.title}</p>

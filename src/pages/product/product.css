@@ -1,0 +1,107 @@
+.product-page{
+    margin: 2% 5%;
+}
+.product-details-section{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 10%;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 30px;
+}
+.product-details-section .left-side{
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-details-section .left-side img{
+    width: 100%;
+}
+.product-details-section .right-side{
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.product-details-section .right-side h2{
+    font-size: 32px;
+    font-weight: 600;
+}
+.product-details-section .right-side p{
+    font-size: 18px;
+    font-weight: 400;
+}
+.product-details-section .right-side h6{
+    font-size: 18px;
+    font-weight: 600;
+}
+.product-details-section .right-side  .add-btn{
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+}
+.product-details-section .right-side .button-div{
+    display: flex;
+    gap: 10px;
+}
+.product-details-section .right-side .button-div button{
+    background: transparent;
+    outline: none;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.comment-section{
+    margin-top: 3%;
+}
+.comment-section  h5{
+    font-size: 28px;
+    font-weight: 600; 
+    margin-bottom: 24px;  
+}
+.comment-section .comment{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    padding: 20px;
+    border-bottom: 1px solid #d3d3d361;
+}
+.comment-section .comment .user-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comment-section .comment .user-detail .user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.comment-section .comment .user-detail .user svg{
+    font-size: 32px;
+}
+.comment-section .comment .user-detail .user p{
+    font-size: 18px;
+}
+.comment-section .comment .user-detail .star-rating{
+    display: flex;
+    gap: 5px;
+}
+.comment-section .comment .user-detail .star-rating svg{
+    font-size: 24px;
+}
+.comment-section .comment .user-comment p{
+    font-size: 14px;
+}
